@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Merit Care Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
+    <div class="flex flex-col md:flex-row min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-white dark:bg-gray-800 shadow-md hidden md:block md:w-64 transition-all duration-300 ease-in-out overflow-y-auto"
+      >
+        <div
+          class="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-center items-center"
+        >
+          <img src="/asset/Logo-F-W.png" class="w-auto h-14" alt="" />
+          <button
+            id="closeSidebarBtn"
+            class="md:hidden text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <nav class="p-4" id="sidebarNav"></nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8 overflow-auto bg-gray-100 dark:bg-gray-900">
+        <div class="md:hidden mb-4">
+          <button
+            id="openSidebarBtn"
+            class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-200"
+          >
+            <i class="fas fa-bars mr-2"></i> Menu
+          </button>
+        </div>
+
+        <h2
+          id="pageTitle"
+          class="text-2xl font-bold mb-6 text-gray-800 dark:text-white"
+        >
+          Dashboard
+        </h2>
+
+        <div id="mainContent"></div>
+
+        <!-- Live Updates -->
+        <div class="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
+            Live Updates
+          </h2>
+          <div class="flex items-center">
+            <span class="bg-red-500 rounded-full h-2 w-2 mr-2"></span>
+            <p class="text-gray-800 dark:text-white">
+              New question added to the bank - 4 minutes ago
+            </p>
+          </div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            This data resets every 30 min.
+          </p>
+        </div>
+
+        <section class="flex justify-center items-center m-20">
+          <img src="/asset/Logo-F-W.png" class="opacity-5" alt="" />
+        </section>
+      </main>
+
+      <!-- User Profile and Settings -->
+      <div class="fixed top-4 right-4 flex items-center space-x-2">
+        <button
+          class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+        >
+          <i class="fas fa-bell"></i>
+        </button>
+        <div class="relative">
+          <button
+            id="userMenuBtn"
+            class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+          >
+            <img
+              src="https://github.com/shadcn.png"
+              alt="User"
+              class="w-8 h-8 rounded-full"
+            />
+          </button>
+          <div
+            id="userMenu"
+            class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-10"
+          >
+            <!-- User menu content will be dynamically populated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
